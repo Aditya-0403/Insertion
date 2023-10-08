@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adi-html</title>
+    <style>
+        body {
+            background-color: var(--bg-color);
+            --bg-color: #081b29;
+            --second-bg-color: #112e42;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            border: 2px solid white;
+            padding: 20px;
+            background-color: #1f3a4b;
+            margin: 20px auto;
+            max-width: 80%;
+        }
+        video {
+            border: solid white;
+            width: 70%;
+            height: auto;
+            display: flex;
+            position: relative;
+            margin: 0 auto;
+        }
+        code {
+            color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+  <h1 align="center">Insertion Sort</h1>
+  <h3 align="center">Aditya (VU21CSEN0100403)</h3>
+    <video controls>
+        <source src="aditya.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <h1><u>Insertion Sort Algorithm</u></h1>
+        <pre><code>// C program for insertion sort
+#include &lt;math.h&gt;
+#include &lt;stdio.h&gt;
+
+/* Function to sort an array using insertion sort*/
+void insertionSort(int arr[], int n){
+    int i, key, j;
+    for (i = 1; i &lt; n; i++) {
+        key = arr[i];
+        j = i - 1;
+
+        /* Move elements of arr[0..i-1], that are
+        greater than key, to one position ahead
+        of their current position */
+        while (j &gt;= 0 &amp;&amp; arr[j] &gt; key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+}
+
+// A utility function to print an array of size n
+void printArray(int arr[], int n){
+    int i;
+    for (i = 0; i &lt; n; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+}
+
+/* Driver program to test insertion sort */
+int main()
+{
+    int arr[] = { 12, 11, 13, 5, 6 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    insertionSort(arr, n);
+    printArray(arr, n);
+
+    return 0;
+}
+        </code></pre>
+    </div>
+</body>
+</html>
